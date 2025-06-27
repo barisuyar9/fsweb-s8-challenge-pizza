@@ -1,0 +1,477 @@
+/* Genel Ayarlar ve Font Tanımları (HomePage.css'ten alınabilir veya burada tekrar tanımlanabilir) */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Quattrocento:wght@400;700&family=Roboto+Condensed:wght@400;700&family=Satisfy&display=swap');
+
+:root {
+    --sari: #FDC913;
+    --acik-gri: #5F5F5F;
+    --koyu-gri: #292929;
+    --kirmizi: #CE2829;
+    --bej: #FAF7F2;
+}
+
+body {
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    color: var(--koyu-gri);
+    background-color: var(--bej);
+}
+
+/* Header Alanı (Teknolojik Yemekler başlığı) */
+.order-form-header {
+    background-color: var(--kirmizi); /* Kırmızı arka plan */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Satisfy', cursive; /* Anasayfa logosundaki font */
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px; /* Alttaki içeriğe boşluk */
+}
+
+/* Pizza Görseli ve Genel Konteyner */
+.order-form-container {
+    max-width: 900px; /* Genişlik sabitleme */
+    margin: 0 auto; /* Sayfayı ortalama */
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px 40px; /* İç boşluklar */
+    position: relative; /* Pizza görseli için */
+    top: -50px; /* Görselin üstteki kırmızı alanı biraz örtmesi için */
+    z-index: 10; /* Üstte görünmesi için */
+}
+
+.order-form-image-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-form-pizza-image {
+    width: 350px; /* Görseldeki pizza boyutuna göre ayarlandı */
+    height: auto;
+    border-radius: 50%; /* Yuvarlak kenarlar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: -150px; /* Kırmızı header'ın üzerine çıkması için */
+}
+
+/* Fiyat ve Değerlendirme Bölümü */
+.price-and-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.price-and-rating .price {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--kirmizi); /* Kırmızı fiyat */
+}
+
+.price-and-rating .rating {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    color: var(--acik-gri);
+}
+
+/* Pizza Adı ve Açıklama */
+.pizza-name {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--koyu-gri);
+}
+
+.pizza-description {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--acik-gri);
+    margin-bottom: 40px;
+}
+
+/* Form Bölümleri */
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-of-type {
+    border-bottom: none; /* Son bölümün altında çizgi olmasın */
+}
+
+.form-section h3 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--koyu-gri);
+}
+
+/* İsim Inputu */
+.name-input-group label {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--koyu-gri);
+}
+
+.name-input-group input[type="text"] {
+    width: calc(100% - 20px); /* Padding'i hesaba kat */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
+    box-sizing: border-box; /* Padding ve border genişliğe dahil */
+}
+
+.name-input-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--sari);
+    box-shadow: 0 0 0 2px rgba(253, 201, 19, 0.3);
+}
+
+
+/* Boyut ve Hamur Seçimi - Kutu İçinde */
+.size-dough-selection {
+    display: flex;
+    gap: 40px; /* İki bölüm arası boşluk */
+    margin-bottom: 30px;
+}
+
+.size-selection, .dough-selection {
+    flex: 1;
+}
+
+.size-selection h3, .dough-selection h3 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--koyu-gri);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px; /* Radio butonları arası boşluk */
+}
+
+.radio-group label {
+    background-color: var(--bej);
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Yuvarlak köşeler */
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    color: var(--acik-gri);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px; /* Küçük, orta, büyük kutular için minimum genişlik */
+    text-align: center;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Varsayılan radio butonunu gizle */
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: var(--sari); /* Seçilince sarı arka plan */
+    border-color: var(--sari);
+    color: var(--kirmizi); /* Seçilince kırmızı metin */
+    font-weight: 700;
+}
+
+/* Hamur Seçimi Dropdown */
+.dough-selection select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
+    background-color: white;
+    appearance: none; /* Varsayılan select stilini kaldır */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235F5F5F'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Özel ok ikonu */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    cursor: pointer;
+}
+
+.dough-selection select:focus {
+    outline: none;
+    border-color: var(--sari);
+    box-shadow: 0 0 0 2px rgba(253, 201, 19, 0.3);
+}
+
+
+/* Malzemeler Bölümü */
+.toppings-section {
+    margin-bottom: 30px;
+}
+
+.toppings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu düzen */
+    gap: 15px; /* Elemanlar arası boşluk */
+}
+
+.toppings-grid label {
+    display: flex;
+    align-items: center;
+    background-color: var(--bej);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Barlow', sans-serif;
+    color: var(--koyu-gri);
+    font-weight: 500;
+}
+
+.toppings-grid label:hover {
+    background-color: #e5e0d7;
+}
+
+.toppings-grid input[type="checkbox"] {
+    appearance: none; /* Varsayılan checkbox'ı gizle */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--sari); /* Sarı border */
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0; /* Küçülmesini engelle */
+}
+
+.toppings-grid input[type="checkbox"]:checked {
+    background-color: var(--sari); /* Seçilince sarı arka plan */
+    border-color: var(--sari);
+}
+
+/* Custom Checkmark (Tik işareti) */
+.toppings-grid input[type="checkbox"]:checked::after {
+    content: '✔'; /* Tik işareti */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: var(--kirmizi); /* Kırmızı tik */
+    font-weight: bold;
+}
+
+.toppings-grid input[type="checkbox"]:disabled + label {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f5f5f5; /* Disabled olduğunda farklı arka plan */
+}
+
+
+/* Özel Not Bölümü */
+.note-section {
+    margin-bottom: 30px;
+}
+
+.note-section label {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--koyu-gri);
+}
+
+.note-section textarea {
+    width: calc(100% - 20px);
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Barlow', sans-serif;
+    resize: vertical; /* Sadece dikeyde yeniden boyutlandırma */
+    box-sizing: border-box;
+}
+
+.note-section textarea:focus {
+    outline: none;
+    border-color: var(--sari);
+    box-shadow: 0 0 0 2px rgba(253, 201, 19, 0.3);
+}
+
+/* Alt Kısım - Adet, Toplam ve Sipariş Butonu */
+.order-summary-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* İçerikler alta hizalı */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control button {
+    background-color: var(--sari);
+    color: var(--kirmizi);
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-control button:hover {
+    background-color: #f1b300;
+}
+
+.quantity-control span {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--koyu-gri);
+}
+
+.order-summary {
+    background-color: var(--bej); /* Hafif bej arka plan */
+    padding: 20px 25px;
+    border-radius: 8px;
+    text-align: right;
+    min-width: 250px; /* Minimum genişlik */
+}
+
+.order-summary h3 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--koyu-gri);
+}
+
+.order-summary p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--acik-gri);
+}
+
+.order-summary .total-price {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--kirmizi);
+    margin-top: 15px;
+}
+
+/* Sipariş Ver Butonu */
+.submit-btn {
+    background-color: var(--sari);
+    color: var(--kirmizi);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Toplam div'inin genişliği kadar */
+    margin-top: 20px; /* Toplama olan boşluk */
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #f1b300;
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .order-form-container {
+        padding: 20px;
+        margin: 0 15px;
+        top: -30px;
+    }
+
+    .order-form-pizza-image {
+        width: 250px;
+        margin-top: -100px;
+    }
+
+    .pizza-name {
+        font-size: 1.8rem;
+    }
+
+    .price-and-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .size-dough-selection {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .toppings-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mobil cihazlarda 2 sütun */
+    }
+
+    .order-summary-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .order-summary {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .submit-btn {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-form-header {
+        font-size: 2rem;
+        padding: 15px 0;
+    }
+
+    .order-form-pizza-image {
+        width: 200px;
+        margin-top: -80px;
+    }
+
+    .toppings-grid {
+        grid-template-columns: 1fr; /* Çok küçük ekranlarda tek sütun */
+    }
+}
